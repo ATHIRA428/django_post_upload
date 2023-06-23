@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Post List</h2>
+{% for post in posts %}
+    <div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+        <p>Created Date: {{ post.created_date }}</p>
+        <img src="{{ post.image.url }}" alt="Post Image">
+    </div>
+    <hr>
+{% empty %}
+    <p>No posts available.</p>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Post List</title>
+</head>
+<body>
+    <h2>Post List</h2>
+    {% for post in posts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.description }}</p>
+            <p>Created Date: {{ post.created_date }}</p>
+            <img src="{{ post.image.url }}" alt="Post Image">
+        </div>
+        <hr>
+    {% empty %}
+        <p>No posts available.</p>
+    {% endfor %}
+</body>
+</html> {% endcomment %}
